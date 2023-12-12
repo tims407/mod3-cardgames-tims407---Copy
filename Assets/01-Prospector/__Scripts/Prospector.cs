@@ -122,10 +122,7 @@ public class Prospector : MonoBehaviour {
             cp.transform.parent = layoutAnchor; // Make its parent layoutAnchor
                                                 // This replaces the previous parent: deck.deckAnchor, which
                                                 // appears as _Deck in the Hierarchy when the scene is playing.
-            cp.transform.localPosition = new Vector3(
-            layout.multiplier.x * tSD.x,
-            layout.multiplier.y * tSD.y,
-            -tSD.layerID);
+            cp.transform.localPosition = new Vector3(layout.multiplier.x * tSD.x, layout.multiplier.y * tSD.y, -tSD.layerID);
             // ^ Set the localPosition of the card based on slotDef
             cp.layoutID = tSD.id;
             cp.slotDef = tSD;
@@ -140,7 +137,6 @@ public class Prospector : MonoBehaviour {
             foreach (int hid in tCP.slotDef.hiddenBy)
             {
                 cp = FindCardByLayoutID(hid);
-                tCP.hiddenBy.Add(cp);
             }
         }
         // Set up the initial target card
@@ -169,14 +165,7 @@ public class Prospector : MonoBehaviour {
         foreach (CardProspector cd in tableau)
         {
             bool faceUp = true; // Assume the card will be face-up
-            foreach (CardProspector cover in cd.hiddenBy)
-            {
-                // If either of the covering cards are in the tableau
-                if (cover.state == eCardState.tableau)
-                {
-                    faceUp = false; // then this card is face-down
-                }
-            }
+            
             cd.faceUp = faceUp; // Set the value on the card
         }
     }
@@ -256,11 +245,7 @@ public class Prospector : MonoBehaviour {
                 break;
             case eCardState.tableau:
                 bool validMatch = true;
-                if (!cd.faceUp)
-                {
-                    // If the card is face-down, it's not valid
-                    validMatch = false;
-                }
+                
                 if (!AdjacentRank(cd, target))
                 {
                     // If it's not an adjacent rank, it's not valid

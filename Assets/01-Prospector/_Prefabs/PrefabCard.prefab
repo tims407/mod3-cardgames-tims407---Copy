@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 21200000}
   - component: {fileID: 6500000}
   - component: {fileID: -5768605301978667971}
+  - component: {fileID: 8574697229394019053}
+  - component: {fileID: 7443268173604668156}
   m_Layer: 0
   m_Name: PrefabCard
   m_TagString: Untagged
@@ -130,8 +132,8 @@ MonoBehaviour:
     face: 
     rank: 0
     pips: []
+  spriteRenderers: []
   state: 0
-  hiddenBy: []
   layoutID: 0
   slotDef:
     x: 0
@@ -143,3 +145,36 @@ MonoBehaviour:
     hiddenBy: 
     type: slot
     stagger: {x: 0, y: 0}
+--- !u!114 &8574697229394019053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a3a1b7466699884da77c4c53ceff698, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
+  _score: 0
+  scoreString: 
+  bezierPts: []
+  fontSizes: []
+  timeStart: -1
+  timeDuration: 1
+  easingCurve: ',InOut|'
+  reportFinishTo: {fileID: 0}
+--- !u!114 &7443268173604668156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b8027694011229419ed43f36c369ae4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
